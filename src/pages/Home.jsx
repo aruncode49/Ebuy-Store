@@ -4,7 +4,7 @@ import Products from "../components/Products";
 const Home = () => {
   return (
     <div>
-      <h2 className="home-heading">Welcome to the Redux Toolkit Store</h2>
+      <h2 className="home-heading">Welcome To My Redux Store</h2>
       <section>
         <Products />
       </section>
