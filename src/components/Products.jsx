@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const Products = () => {
   const [products, setProducts] = useState(null);
@@ -12,9 +14,15 @@ const Products = () => {
   async function fetchProducts() {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
-    console.log(data);
     setProducts(data);
   }
+
+  const dispatch = useDispatch();
+
+  // Dispatch an action
+  const addProduct = (product) => {
+    dispatch(addItem(product));
+  };
 
   return !products ? (
     <Shimmer />
@@ -25,7 +33,9 @@ const Products = () => {
           <img className="product-img" src={product?.image} alt="product-Img" />
           <h4 className="product-title">{product?.title}</h4>
           <h5 className="price">${product?.price}</h5>
-          <button className="product-btn">Add to Cart</button>
+          <button onClick={() => addProduct(product)} className="product-btn">
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>

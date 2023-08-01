@@ -90,3 +90,49 @@ span {
 .product-btn:hover {
   background-color: rgb(167, 13, 167);
 }
+
+/* cart */
+
+.cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  background-color: white;
+  padding: 10px 50px;
+}
+
+.cart-img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
+.cart-title {
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+}
+
+.cart-price {
+  width: 100px;
+  text-align: center;
+}
+
+.cart-btn {
+  border: none;
+  outline: none;
+  background-color: rgb(103, 13, 103);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
