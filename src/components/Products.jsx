@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
 
   useEffect(() => {
     // call fetch Product function
@@ -15,7 +16,9 @@ const Products = () => {
     setProducts(data);
   }
 
-  return (
+  return !products ? (
+    <Shimmer />
+  ) : (
     <div className="product-wrapper">
       {products.map((product) => (
         <div className="card" key={product.id}>
