@@ -1,11 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartEmpty from "../components/CartEmpty";
+import { MdDeleteOutline } from "react-icons/md";
+import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
   // This is the place where you tell what are you subscribing to
   const cartItem = useSelector((store) => store.cart.items);
-  console.log(cartItem);
+
+  // clear cart
+  const dispatch = useDispatch();
+  const clearCartHandler = () => {
+    dispatch(clearCart());
+  };
 
   return cartItem.length === 0 ? (
     <CartEmpty />
@@ -19,6 +26,10 @@ const Cart = () => {
           <button className="cart-btn">Delete</button>
         </div>
       ))}
+      <button onClick={clearCartHandler} className="clear-cart-btn">
+        <MdDeleteOutline size={18} />
+        Clear Cart
+      </button>
     </div>
   );
 };

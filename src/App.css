@@ -170,6 +170,10 @@ span {
   cursor: pointer;
 }
 
+.cart-btn:hover {
+  background-color: rgb(167, 13, 167);
+}
+
 .empty-cart {
   display: flex;
   flex-direction: column;
@@ -202,5 +206,24 @@ span {
 }
 
 .empty-cart-btn:hover {
+  background-color: rgb(167, 13, 167);
+}
+
+.clear-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: rgb(103, 13, 103);
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 10px auto;
+  outline: none;
+  border: none;
+}
+
+.clear-cart-btn:hover {
   background-color: rgb(167, 13, 167);
 }
