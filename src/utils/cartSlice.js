@@ -12,8 +12,9 @@ const cartSlice = createSlice({
       // addItem = action, () => reducer function
       state.items.push(action.payload);
     },
-    removeItem: (state) => {
-      state.items.pop();
+    removeItem: (state, action) => {
+      const itemIdToRemove = action.payload;
+      state.items = state.items.filter((item) => item.id !== itemIdToRemove);
     },
     clearCart: (state) => {
       state.items = [];
