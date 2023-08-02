@@ -12,7 +12,7 @@ const CartEmpty = () => {
         will find a lot of interesting products on our "Shop" page.
       </p>
       <Link to="/" className="empty-cart-btn">
-        <IoCart />
+        <IoCart size={20} />
         RETURN TO SHOP
       </Link>
     </div>

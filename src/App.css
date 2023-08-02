@@ -197,7 +197,7 @@ span {
 .empty-cart-btn {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   background-color: rgb(103, 13, 103);
   color: white;
   text-decoration: none;
